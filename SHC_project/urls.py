@@ -21,6 +21,15 @@ from shcApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('registrarAuxiliar/', views.AuxiliarView.as_view()),
+    path('eliminarAuxiliar/<int:pk>', views.AuxiliarView.as_view()),
+	path('actualizarAuxiliar/<int:pk>', views.AuxiliarView.as_view()),
+	path('consultarAuxiliar/<int:pk>', views.AuxiliarView.as_view()),
+	path('consultarAllAuxiliar/', views.AllAuxiliares.as_view()),
+    path('registrarPaciente/', views.PacienteView.as_view()),
+    path('eliminarPaciente/<int:pk>/<int:id_usuario_accion>', views.PacienteView.as_view()),
+    path('consultarPaciente/<int:pk>/<int:id_usuario_accion>', views.PacienteView.as_view()),
+	path('consultarAllPacientes/<int:id_usuario_accion>', views.AllPacientes.as_view()),
     path('login/', TokenObtainPairView.as_view()),
     path('refresh/', TokenRefreshView.as_view()),
+    
 ]

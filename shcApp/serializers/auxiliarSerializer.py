@@ -1,4 +1,3 @@
-from shcApp.models import auxiliar
 from shcApp.models.user import User
 from shcApp.models.auxiliar import Auxiliar
 from rest_framework import serializers
@@ -15,7 +14,7 @@ class AuxiliarSerializer(serializers.ModelSerializer):
 
     def to_representation(self, obj):
         auxiliar = Auxiliar.objects.get(id=obj.id)
-        user = User.objects.get(id=auxiliar.usuario)
+        user = User.objects.get(id=auxiliar.usuario.id)
 
         return {
             'auxiliar':{
@@ -28,11 +27,12 @@ class AuxiliarSerializer(serializers.ModelSerializer):
                 'username' : user.username,
                 'password' : user.password,
                 'create_date' : user.create_date,
-                'nombre' : user.nombre,
-                'apellido' : user.apellido,                
                 'activo' : user.activo,
+                'nombre' : user.nombre,
+                'apellido' : user.apellido,               
                 'correo' : user.correo,
                 'direccion' : user.direccion,
-                'telefono' : user.telefono
+                'telefono' : user.telefono,
+                'rol' : user.rol
             }
         }

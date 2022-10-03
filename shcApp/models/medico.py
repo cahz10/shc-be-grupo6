@@ -4,7 +4,7 @@ from .auxiliar import Auxiliar
 
 class Medico(models.Model):
     id = models.BigAutoField(primary_key=True)
-    usuario = models.ForeignKey(User, related_name='id_usuario_medico', on_delete=models.CASCADE, unique = True)
+    usuario = models.ForeignKey(User, related_name='id_usuario_medico', on_delete=models.CASCADE, unique=True)
     profesion = models.CharField('profesion', max_length = 15)
     eps = models.CharField('eps', max_length = 30)
     nivel = models.IntegerField('nivel', default=0)
