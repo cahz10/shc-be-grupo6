@@ -28,6 +28,7 @@ urlpatterns = [
     path('registrarPaciente/', views.PacienteView.as_view()),
     path('eliminarPaciente/<int:pk>/<int:id_usuario_accion>', views.PacienteView.as_view()),
     path('consultarPaciente/<int:pk>/<int:id_usuario_accion>', views.PacienteView.as_view()),
+    path('actualizarPaciente/<int:pk>/<int:id_usuario_accion>', views.PacienteView.as_view()),
 	path('consultarAllPacientes/<int:id_usuario_accion>', views.AllPacientes.as_view()),
     path('login/', TokenObtainPairView.as_view()),
     path('refresh/', TokenRefreshView.as_view()),

@@ -69,7 +69,7 @@ class AuxiliarView(views.APIView):
         
         data_usuario = request.data.pop('usuario_info')
         data_usuario['create_date'] =now.strftime("%Y-%m-%d")
-        data_auxiliar['usuario'] = usuario.id
+        #data_auxiliar['usuario'] = usuario.id
         
         serializer_user = UserSerializer(data = data_usuario)
         serializer_user.is_valid(raise_exception=True)                   
