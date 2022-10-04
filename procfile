@@ -1,1 +1,1 @@
-web: gunicorn SHC_project.wsgi
+web: gunicorn authProject.wsgi
