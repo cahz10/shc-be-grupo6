@@ -165,16 +165,19 @@ class PacienteView(views.APIView):
         data_usuario['create_date'] =now.strftime("%Y-%m-%d")
         serializer_user = UserSerializer(usuario, data = data_usuario)
         serializer_user.is_valid(raise_exception=True)
-        usuario = serializer_user.save() 
+        paciente = serializer_user.save() 
 
         data_paciente = request.data.pop('paciente_info')
         data_paciente['create_date'] = now.strftime("%Y-%m-%d")
+        data_paciente ['usuario'] = usuario.id
+        
         serializer_paciente = PacienteSerializer(paciente, data = data_paciente)
         serializer_paciente.is_valid(raise_exception=True)
         paciente = serializer_paciente.save() 
             
         return_data = {'paciente': PacienteSerializer(paciente).data}
-        return Response(return_data, status = status.HTTP_200_OK)   
+        stringResponse = {'detail': 'Registro actualizado exitosamente'}
+        return Response(return_data, status = status.HTTP_200_OK)
     
 		
 class AllPacientes(generics.ListAPIView):
