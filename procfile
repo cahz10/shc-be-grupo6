@@ -1,1 +1,0 @@
-web: gunicorn SHC_project.wsgi
