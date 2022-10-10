@@ -102,10 +102,10 @@ WSGI_APPLICATION = 'SHC_project.wsgi.application'
 DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'd2a86c7e4d2ldv',
-            'USER': 'jifjkuueaapxab',
-            'PASSWORD': '6004a71fccc05b1b529971da494d83392bed82c02b1ed542b4eab548f84c90fb',
-            'HOST': 'ec2-44-207-253-50.compute-1.amazonaws.com',
+            'NAME': 'db3j2955onb7hl',
+            'USER': 'ubnzccvhqcozms',
+            'PASSWORD': '7828d4c0224ef5cb0dfccd8bf10b8bf57beda4ccc4d927bd9aeaa7b6941dd86f',
+            'HOST': 'ec2-54-227-248-71.compute-1.amazonaws.com',
             'PORT': '5432',
         }
 }
